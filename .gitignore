@@ -1,0 +1,55 @@
+# ============================================================
+#  .gitignore — Pinnacle 备份解包导出工具
+# ============================================================
+
+# ---------- 患者数据 / 隐私（PHI）—— 严禁提交 ----------
+
+# Pinnacle 备份 tar（含患者 CT 影像、剂量、勾画结构）
+*.tar
+
+# 已解包 / 提取的患者目录与临时检查目录
+2026082002/
+2026082002.*/
+_patient_*/
+_patient_index/
+_inspect_*/
+
+# 生成的 DICOM 输出（含患者姓名、ID、影像）
+DICOM_*/
+*.dcm
+
+# 患者名单截图（含患者姓名 / 病历号）
+2026082002备份名单.png
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+
+# ---------- 虚拟环境 / IDE ----------
+.venv/
+venv/
+env/
+.idea/
+.vscode/
+*.iml
+
+# ---------- 调试草稿（一次性分析脚本与文本导出，非发布代码）----------
+# 如想保留这些调试脚本，删除本段即可
+_*.py
+_*.txt
+!_make_rtdose.py
+!_make_rtplan.py
+!_make_rtstruct.py
+!_pymedphys_export.py
+
+# ---------- 其他 ----------
+*.log
+.DS_Store
+Thumbs.db
